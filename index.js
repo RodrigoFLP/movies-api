@@ -5,6 +5,7 @@ const app = express();
 
 const { config } = require('./config/index');
 const moviesApi = require('./routes/movies');
+const userMoviesApi = require('./routes/userMovies');
 
 const {
   logErrors,
@@ -19,6 +20,7 @@ app.use(express.json());
 
 // routes
 moviesApi(app);
+userMoviesApi(app);
 
 //catch 404 error
 app.use(notFoundHandler);
